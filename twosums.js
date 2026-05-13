@@ -26,3 +26,21 @@ var twoSum = function(nums, target) {
     }
 };
 console.log(twoSum(nums,target))
+
+//two sum using two pointer approach
+let sum = function(nums,target){
+    let left=0;
+    let right = nums.length-1;
+    while(left<right)
+    {
+        let sum = nums[right]+nums[left]
+        if(sum==target){
+            return [left,right];
+        }
+        else if(sum<target){
+          left++
+        }
+        right--
+    }
+}
+console.log(sum(nums,target))
