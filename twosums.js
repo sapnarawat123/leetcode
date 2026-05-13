@@ -13,3 +13,16 @@ var twoSum = function(nums, target) {
     }
     };
 console.log(twoSum(nums,target))
+
+////two sum using hash map
+var twoSum = function(nums, target) {
+    let map = new Map();
+    for(let i=0;i<nums.length;i++){
+        let complement = target-nums[i];
+        if(map.has(complement)){
+            return [map.get(complement),i]
+        }
+        map.set(nums[i],i)// stores current value and index in the map for next iteration  
+    }
+};
+console.log(twoSum(nums,target))
