@@ -7,7 +7,7 @@
 // Output: 6
 // Explanation: The subarray [4,-1,2,1] has the largest sum 6.
 
-//using brute force approach
+//using brute force approach time complexity is O(n^2) and space complexity is O(1)
 
 var maxSubArray = function(nums){
     let maxSum = nums[0];
@@ -21,13 +21,13 @@ var maxSubArray = function(nums){
             }
 
         }
-        return maxSum;
     }
+    return maxSum;
 }
 
 console.log(maxSubArray([-2,1,-3,4,-1,2,1,-5,4]))
 
-//USING KANDANE ALGORITHM
+//kandane's algorithm time complexity is O(n) and space complexity is O(1)
 
 var sub = function maxSum(nums){
     let currentSum=0;
@@ -41,4 +41,16 @@ var sub = function maxSum(nums){
             }
            }
            return maxSum;
+}
+
+// or you can write it like this , same logic but more concise for kandane's algorithm
+
+var sub= function maxSum(nums){
+    let currentSum =0;
+    let maxSum= 0;
+    for(let i=0;i<nums.length;i++){
+        currentSum = Math.max(maxSum, currentSum+ nums[i]);
+        maxsum = Math.max(maxSum,currentSum);
+    }
+    return maxSum;
 }
